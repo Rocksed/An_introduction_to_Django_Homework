@@ -16,6 +16,8 @@ class Product(models.Model):
         return f'{self.name} {self.description} {self.category}'
 
     class Meta:
+        verbose_name = 'Продукт'
+        verbose_name_plural = 'Продукты'
         ordering = ('name',)
 
 
@@ -27,4 +29,6 @@ class Category(models.Model):
         return f'{self.name} {self.description}'
 
     class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
         ordering = ('name',)

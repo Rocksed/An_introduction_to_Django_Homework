@@ -1,17 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | E-Shopper</title>
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="static/css/prettyPhoto.css" rel="stylesheet">
+    <link href="static/css/price-range.css" rel="stylesheet">
+    <link href="static/css/animate.css" rel="stylesheet">
+    <link href="static/css/main.css" rel="stylesheet">
+    <link href="static/css/responsive.css" rel="stylesheet">
+    <style>
+        .single-products:hover {
+            border: 1px solid red;
+        }
+
+    </style>
 </head>
 <body>
-<h1>Hi, SKY<h1>
-<form method="post">
-    {% csrf_token %}
-    <input placeholder="name" name="name"/><br><br>
-    <input placeholder="email" name="email" type="email"/><br><br>
-    <textarea placeholder="your massege" name="massage"></textarea><br><br>
-    <input type="submit" value="Submit!"/>
-</form>
+<div class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">E-Shopper</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div style="margin-top:80px;">
+    <h2 class="title text-center">Продукты</h2>
+    <div class="row">
+        {% for object in object_list %}
+        <div class="col-md-3">
+            <div class="product-image-wrapper">
+                <div class="single-products">
+                    <div class="productinfo text-center">
+                        <div style="margin: 20px 5px 20px 5px;">
+                            <h2>{{object.name}}</h2>
+                            <p>{{object.description}}</p>
+                            <p>{{object.purchase_price}} руб.</p>
+                            <p>Дата поступления: {{object.creation_date}} </p>
+                        </div>
+                        <div class="choose">
+                            <ul class="nav flex-column justify-content-between choose">
+                                <li class="d-inline me-auto"><a href="#"><i class="fa fa-plus-square"></i>Добавить в
+                                    список
+                                    желаемых</a></li>
+                                <li class="d-inline ms-auto"><a href="#"><i class="fa fa-plus-square"></i>Купить</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <script src="static/js/jquery.js"></script>
+            <script src="static/js/bootstrap.min.js"></script>
+            <script src="static/js/jquery.scrollUp.min.js"></script>
+            <script src="static/js/price-range.js"></script>
+            <script src="static/js/jquery.prettyPhoto.js"></script>
+            <script src="static/js/main.js"></script>
 </body>
 </html>
