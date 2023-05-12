@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Hi, SKY<h1>
-<form method="post">
-    {% csrf_token %}
-    <input placeholder="name" name="name"/><br><br>
-    <input placeholder="email" name="email" type="email"/><br><br>
-    <textarea placeholder="your massege" name="massage"></textarea><br><br>
-    <input type="submit" value="Submit!"/>
-</form>
-</body>
-</html>
+{% extends 'catalog/base.html' %}
+{% block content %}
+<div class="col-sm-4 col-sm-offset-1">
+    <div class="login-form"><!--login form-->
+        <h2>Login to your account</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input placeholder="Name" name="name"/><br><br>
+            <input placeholder="Email Address" name="email" type="email"/><br><br>
+            <textarea placeholder="your massege" name="massage"></textarea><br><br>
+            <span>
+								<input type="checkbox" class="checkbox">
+								Keep me signed in
+							</span>
+            <button type="submit" class="btn btn-default">Login</button>
+        </form>
+    </div><!--/login form-->
+    {% endblock %}
