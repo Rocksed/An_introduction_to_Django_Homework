@@ -1,14 +1,22 @@
 from django.shortcuts import render
 
+from catalog.forms import ProductForm
 from catalog.models import Product
 
 
 def index(request):
-    context = {
-        'object_list': Product.objects.all()
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+    else:
+        form = ProductForm()
 
+    context = {
+        'object_list': Product.objects.all(),
+        'form': form,
     }
-    return render(request, 'catalog/index.html', context, )
+    return render(request, 'catalog/index.html', context)
 
 
 def contacts(request):
