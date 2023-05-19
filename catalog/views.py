@@ -25,4 +25,4 @@ def contacts(request):
         email = request.POST.get('email')
         massage = request.POST.get('massage')
         print(f'User_name: {name}, User_email: {email}, User_massage:{massage}')
-    return render(request, 'catalog/cast.html',)
+    return render(request, 'catalog/contacts.html',)
