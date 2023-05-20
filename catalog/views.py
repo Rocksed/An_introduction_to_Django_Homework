@@ -1,7 +1,8 @@
 from django.shortcuts import render
+from django.views import generic
 
 from catalog.forms import ProductForm
-from catalog.models import Product
+from catalog.models import Product, Blog
 
 
 def index(request):
@@ -16,7 +17,7 @@ def index(request):
         'object_list': Product.objects.all(),
         'form': form,
     }
-    return render(request, 'catalog/index.html', context)
+    return render(request, 'catalog/index-home.html', context)
 
 
 def contacts(request):
@@ -24,5 +25,12 @@ def contacts(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         massage = request.POST.get('massage')
-        print(f'User_name: {name}, User_email: {email}, User_massage:{massage}')
-    return render(request, 'catalog/contacts.html',)
+        phone = request.POST.get('Phone')
+        print(f'User_name: {name}, User_email: {email}, User_massage:{massage}, User_phone: {phone}')
+    return render(request, 'catalog/index-contacts.html',)
+
+
+class BlogListView(generic.ListView):
+    model = Blog
+# def blog(request):
+#     return render(request, 'catalog/blog_list.html',)

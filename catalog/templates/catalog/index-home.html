@@ -1,0 +1,39 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+<!--=====================
+          Content
+======================-->
+<section class="content">
+    <div class="ic">More Website Templates @ TemplateMonster.com - July 30, 2014!</div>
+    <div class="container">
+        <div class="row">
+            <div class="grid_12">
+                <h2>Продукты</h2>
+            </div>
+
+            {% for object in object_list %}
+            <div class="col-md-3">
+                <div class="single-products">
+                    <div class="product-image">
+                        <a href="{{ object.get_absolute_url }}"><img src="{{ object.image_preview.url }}"
+                                                                     alt="{{ object.name }}" width="370"
+                                                                     height="270"></a>
+                        <div class="block2">
+                            <time datetime="2014-01-01">{{object.purchase_price}}<br>Руб.</time>
+                            <div class="extra_wrapper">
+                                <div class="text1"><a href="#">{{ object.name }}</a></div>
+                                {{object.description}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="#" class="black-border-button">Купить</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
+

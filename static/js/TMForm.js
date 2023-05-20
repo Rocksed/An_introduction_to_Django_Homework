@@ -17,7 +17,7 @@ $(window).load(function(){
 					,responseMessageClass:'response-message'
 					,processingClass:'processing'
 					,onceVerifiedClass:'once-verified'
-					,mailHandlerURL:'mail/MailHandler.php'					
+					,mailHandlerURL:'mail/MailHandler.php'
 					,successShowDelay:'4000'
 					,stripHTML:true
 				},opt)
