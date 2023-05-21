@@ -1,0 +1,22 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+<section class="content">
+    <div class="ic">More Website Templates @ TemplateMonster.com - July 30, 2014!</div>
+    <div class="container">
+        <div class="row">
+            <div class="grid_7">
+                <div class="blog">
+                    <div class="blog_title"><a href="{% url 'catalog:blog_list' object.pk %}">{{ object.headline }}</a>
+                    </div>
+                    {% if object.preview %}
+                    <a href="{{ object.get_absolute_url }}"><img src="{{ object.preview.url }}"
+                                                                 alt="{{ object.headline }}" width="800"
+                                                                 height="400"></a>
+                    {% endif %}
+                    <p>{{ object.content }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 NULLABLE = {'blank': True, 'null': True}
 
@@ -39,12 +40,17 @@ class Blog(models.Model):
     slug = models.CharField(max_length=50, verbose_name='slug', **NULLABLE)
     content = models.TextField(max_length=1000, verbose_name='Содержание', **NULLABLE)
     preview = models.ImageField(upload_to='media/image/', verbose_name='Изображение', **NULLABLE)
-    creation_date = models.DateTimeField(verbose_name='Дата создания', **NULLABLE)
-    publication_feature = models.CharField(max_length=50, verbose_name='Признак публикации')
-    views_count = models.IntegerField(verbose_name='количество просмотров')
+    creation_date_blog = models.DateTimeField(verbose_name='Дата создания', **NULLABLE)
+    publication_feature = models.CharField(max_length=50, verbose_name='Признак публикации', **NULLABLE)
+    views_count = models.IntegerField(verbose_name='количество просмотров', default=0)
 
     def __str__(self):
         return f'{self.headline} {self.slug} {self.content} {self.publication_feature}'
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.headline)
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'Блог'

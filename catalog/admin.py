@@ -21,5 +21,5 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ('headline', 'slug', 'views_count', 'creation_date',)
-    search_fields = ('views_count', 'creation_date',)
+    list_display = ('headline', 'slug', 'views_count', 'creation_date_blog',)
+    search_fields = ('views_count', 'creation_date_blog',)

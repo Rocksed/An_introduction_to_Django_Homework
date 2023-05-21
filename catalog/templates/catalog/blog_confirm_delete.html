@@ -1,0 +1,18 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+<section class="content">
+    <div class="ic">More Website Templates @ TemplateMonster.com - July 30, 2014!</div>
+    <div class="container">
+        <div class="row">
+            <div class="grid_11">
+                <h2>Написать статю</h2>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                      Вы уверены, что хотите удалить статью?
+                    <input type="submit" class="btn" value="Уверен">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
