@@ -1,0 +1,68 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+<section class="content">
+    <div class="ic">More Website Templates @ TemplateMonster.com - July 30, 2014!</div>
+    <div class="container">
+        <div class="row">
+            <div class="grid_11">
+                <h2>Изменить</h2>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <h2>Версия</h2>
+                    <div class="version-form">
+                        {{ formset.management_form }}
+                        {% for form in formset %}
+                        <div class="formset-row">
+                            {{ form.as_table }}
+                            <button type="button" class="delete-button" onclick="toggleDelete(this)">
+                                {% if form.instance.id %}
+                                Удалить
+                                {% else %}
+                                Удалить (еще не сохранено)
+                                {% endif %}
+                            </button>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <input type="reset" class="btn" value="Очистить">
+                    <input type="submit" class="btn" value="{% if object %}Сохранить{% else %}Создать{% endif %}">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function toggleIsCurrent(button) {
+      button.innerText = button.innerText === "Установлено" ? "Не установлено" : "Установлено";
+      var isCurrentInput = button.parentNode.querySelector('input[name$="-is_current"]');
+      isCurrentInput.value = button.innerText === "Установлено" ? "1" : "0";
+    }
+
+    function toggleDelete(button) {
+      var deleteInput = button.parentNode.querySelector('input[name$="-DELETE"]');
+      deleteInput.checked = !deleteInput.checked;
+      button.innerText = deleteInput.checked ? "Отменить удаление" : "Удалить";
+    }
+
+</script>
+
+<style>
+    .is-current-button,
+    .delete-button {
+      padding: 5px 10px;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .is-current-button {
+      background-color: #4CAF50;
+    }
+
+    .delete-button {
+      background-color: #f44336;
+    }
+
+</style>
+{% endblock %}

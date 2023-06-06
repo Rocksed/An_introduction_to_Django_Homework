@@ -16,6 +16,13 @@ class Product(models.Model):
     def __str__(self):
         return f'{self.name} {self.description} {self.category}'
 
+    def get_latest_version(self):
+        active_version = self.version_set.filter(is_active=True).first()
+        if active_version:
+            return active_version
+        else:
+            return self.version_set.order_by('-version_number').first()
+
     class Meta:
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
@@ -56,3 +63,17 @@ class Blog(models.Model):
         verbose_name = 'Блог'
         verbose_name_plural = 'Блог'
         ordering = ('views_count',)
+
+
+class Version(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    version_number = models.IntegerField(verbose_name='Номер версии', **NULLABLE)
+    version_name = models.CharField(verbose_name='Название версии', max_length=255, **NULLABLE)
+    is_active = models.BooleanField(verbose_name='Признак текущей версии', default=False, **NULLABLE)
+
+    def __str__(self):
+        return f"{self.product.name} - {self.version_number} - {self.version_name}"
+
+    class Meta:
+        verbose_name = 'Версия'
+        verbose_name_plural = 'Версия'
