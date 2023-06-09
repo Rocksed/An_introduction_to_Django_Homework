@@ -113,10 +113,18 @@
                         <nav>
                             <ul class="sf-menu">
                                 <li class="current"><a href="/">Главная</a></li>
-                                <li><a href="/blog/">Блог</a></li>
-                                <li><a href="/contacts/">Контакты</a></li>
-                                <li><a href="/blog/create/">Создать статью</a></li>
-                                <li><a href="/product/create/">Добавить продукт</a></li>
+                                <li><a href="{% url 'catalog:blog_list' %}">Блог</a></li>
+                                <li><a href="{% url 'catalog:index-contacts' %}">Контакты</a></li>
+                                <li><a href="{% url 'catalog:block_form' %}">Создать статью</a></li>
+                                <li><a href="{% url 'catalog:product_form' %}">Добавить продукт</a></li>
+                                {% if user.is_authenticated %}
+                                <li><a href="{% url 'users:profile' %}">Профиль</a></li>
+                                <li><a href="{% url 'users:logout' %}">Выход</a></li>
+                                {% else %}
+                                <li><a href="{% url 'users:login' %}">Вход</a></li>
+                                <li><a href="{% url 'users:register' %}">Регистрация</a></li>
+                                {% endif %}
+
                             </ul>
                         </nav>
                         <div class="clear"></div>

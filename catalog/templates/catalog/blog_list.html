@@ -7,63 +7,66 @@
     <div class="ic">More Website Templates @ TemplateMonster.com - July 30, 2014!</div>
     <div class="container">
         <div class="row">
-            <div class="grid_7">
-                {% for object in object_list %}
-                <div class="blog">
-                    <div class="blog_title"><a href="{% url 'catalog:blog_list' object.pk %}">{{ object.headline }}</a></div>
-                    {% if object.preview %}
-                    <a href="{{ object.get_absolute_url }}"><img src="{{ object.preview.url }}"
-                                                                 alt="{{ object.headline }}" width="800"
-                                                                 height="400"></a>
-                    {% endif %}
-                    <p>{{ object.slug }}</p>
-                    <p>{{ object.content }}</p>
-                    <table>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <time datetime="2014-01-01">
-                                    <span class="fa fa-calendar"></span>
-                                    {{ object.creation_date_blog}}
-                                </time>
-                            </td>
-                            <td><a href="#">
-                                <div class="fa fa-user"></div>
-                                Admin</a></td>
-                            <td><a href="#"><span class="fa fa-link"></span> Permalink</a></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="fa fa-bookmark"></div>
-                                Uncategorized
-                            </td>
-                            <td colspan="2">
-                                <div class="fa fa-tag"></div>
-                                No tags
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="fa fa-comments"></div>
-                                No comments
-                            </td>
-                            <td colspan="2">
-                                <div class="fa fa-eye"></div>
-                                {{ object.views_count }}
-                                <div class="fa fa-thumbs-up"></div>
-                                0
-                                <div class="fa fa-thumbs-down"></div>
-                                0
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <a href="{% url 'catalog:block_form' object.pk %}" class="btn" role="button">Изменить</a>
-                    <a href="{% url 'catalog:blog_confirm_delete' object.pk %}" class="btn" role="button">Удалить</a>
-                </div>
-                {% endfor %}
+            <div class="grid_12">
+                <h2>Блог</h2>
             </div>
+            {% for object in object_list %}
+            <div class="blog">
+                <div class="blog_title"><a href="{% url 'catalog:blog_list' object.pk %}">{{ object.headline }}</a>
+                </div>
+                {% if object.preview %}
+                <a href="{{ object.get_absolute_url }}"><img src="{{ object.preview.url }}"
+                                                             alt="{{ object.headline }}" width="800"
+                                                             height="400"></a>
+                {% endif %}
+                <p>{{ object.slug }}</p>
+                <p>{{ object.content }}</p>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <time datetime="2014-01-01">
+                                <span class="fa fa-calendar"></span>
+                                {{ object.creation_date_blog}}
+                            </time>
+                        </td>
+                        <td><a href="#">
+                            <div class="fa fa-user"></div>
+                            Admin</a></td>
+                        <td><a href="#"><span class="fa fa-link"></span> Permalink</a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fa fa-bookmark"></div>
+                            Uncategorized
+                        </td>
+                        <td colspan="2">
+                            <div class="fa fa-tag"></div>
+                            No tags
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fa fa-comments"></div>
+                            No comments
+                        </td>
+                        <td colspan="2">
+                            <div class="fa fa-eye"></div>
+                            {{ object.views_count }}
+                            <div class="fa fa-thumbs-up"></div>
+                            0
+                            <div class="fa fa-thumbs-down"></div>
+                            0
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <a href="{% url 'catalog:block_form' object.pk %}" class="btn" role="button">Изменить</a>
+                <a href="{% url 'catalog:blog_confirm_delete' object.pk %}" class="btn" role="button">Удалить</a>
+            </div>
+            {% endfor %}
         </div>
+    </div>
     </div>
 </section>
 {% endblock %}
