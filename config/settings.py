@@ -144,3 +144,4 @@ EMAIL_HOST_USER = 'afanasijfoks69@gmail.com'
 EMAIL_HOST_PASSWORD = 'jvxzhnrfqdrrrwqo'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+LOGIN_URL = '/users/'

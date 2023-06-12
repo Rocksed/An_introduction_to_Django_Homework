@@ -1,10 +1,15 @@
+from django.conf import settings
 from django.db import models
 from django.utils.text import slugify
+from django.contrib.auth import get_user_model
 
 NULLABLE = {'blank': True, 'null': True}
 
+User = get_user_model()
+
 
 class Product(models.Model):
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='Владелец', **NULLABLE)
     name = models.CharField(max_length=50, verbose_name='Название')
     description = models.CharField(max_length=500, verbose_name='Описание', **NULLABLE)
     image_preview = models.ImageField(upload_to='media/image/', verbose_name='Изображение', **NULLABLE)
@@ -22,6 +27,9 @@ class Product(models.Model):
             return active_version
         else:
             return self.version_set.order_by('-version_number').first()
+
+    def is_editable_by(self, user):
+        return self.owner == user
 
     class Meta:
         verbose_name = 'Продукт'

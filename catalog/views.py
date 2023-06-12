@@ -1,4 +1,6 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import inlineformset_factory
+from django.http import HttpResponseForbidden
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views import generic
@@ -15,19 +17,29 @@ class ProductDetailView(generic.DetailView):
     model = Product
 
 
-class ProductCreateView(generic.CreateView):
+class ProductCreateView(LoginRequiredMixin, generic.CreateView):
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('catalog:product_form')
 
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
 
-class ProductUpdateView(generic.UpdateView):
+
+class ProductUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Product
     form_class = ProductForm
     template_name = 'catalog/product_formset.html'
 
     def get_success_url(self, *args, **kwargs):
         return reverse('catalog:product_formset', args=[self.get_object().pk])
+
+    def dispatch(self, request, *args, **kwargs):
+        if not self.get_object().is_editable_by(request.user):
+            # Если пользователь не является владельцем продукта, перенаправляем на другую страницу или выводим ошибку
+            return HttpResponseForbidden("Вы не являетесь владельцем данного продукта.")
+        return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
@@ -39,13 +51,7 @@ class ProductUpdateView(generic.UpdateView):
         return context_data
 
     def form_valid(self, form):
-        context_data = self.get_context_data()
-        formset = context_data['formset']
-        self.object = form.save()
-        if formset.is_valid():
-            formset.instance = self.object
-            formset.save()
-            formset.queryset.filter(is_active=True).exclude(pk=formset.instance.pk).update(is_active=False)
+        form.instance.owner = self.request.user
         return super().form_valid(form)
 
 
@@ -74,21 +80,21 @@ class BlogDetailView(generic.DetailView):
         return self.render_to_response(context)
 
 
-class BlogCreateView(generic.CreateView):
+class BlogCreateView(LoginRequiredMixin, generic.CreateView):
     model = Blog
     # fields = ['headline', 'content', 'preview', 'creation_date_blog']
     form_class = BlogForm
     success_url = reverse_lazy('catalog:blog_list')
 
 
-class BlogUpdateView(generic.UpdateView):
+class BlogUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Blog
     form_class = BlogForm
     # fields = ['headline', 'content', 'preview', 'creation_date_blog']
     success_url = reverse_lazy('catalog:blog_list')
 
 
-class BlogDeleteView(generic.DeleteView):
+class BlogDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Blog
     success_url = reverse_lazy('catalog:blog_list')
 
