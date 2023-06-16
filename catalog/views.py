@@ -3,18 +3,50 @@ from django.forms import inlineformset_factory
 from django.http import HttpResponseForbidden
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
+from django.utils.decorators import method_decorator
 from django.views import generic
+from django.views.decorators.cache import cache_page
 
 from catalog.forms import ProductForm, BlogForm, ProductVersion
-from catalog.models import Product, Blog, Version
+from catalog.models import Product, Blog, Version, Category
+from django.core.cache import cache
+
+
+def get_category_list():
+    category_list = cache.get('category_list')
+    if category_list is None:
+        category_list = Category.objects.all()
+        cache.set('category_list', category_list)
+    return category_list
 
 
 class ProductListView(generic.ListView):
     model = Product
+    template_name = 'catalog/product_list.html'
+    context_object_name = 'object_list'
+    category_list = get_category_list()
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        category_id = self.request.GET.get('category')
+
+        if category_id:
+            queryset = queryset.filter(category_id=category_id)
+
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        return context
 
 
 class ProductDetailView(generic.DetailView):
     model = Product
+
+    @method_decorator(cache_page(60 * 5))  # Кеширование на 5 минут
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
 
 
 class ProductCreateView(LoginRequiredMixin, generic.CreateView):

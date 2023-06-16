@@ -1,0 +1,414 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2023-06-15T08:19:05.957Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "1",
+      "object_repr": "Овощи None",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2023-06-15T08:19:12.830Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "2",
+      "object_repr": "Фрукты None",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2023-06-15T08:19:25.707Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "3",
+      "object_repr": "Техника None",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2023-06-15T08:19:42.288Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "4",
+      "object_repr": "Спорт None",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2023-06-15T08:19:48.750Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "5",
+      "object_repr": "Книги None",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2023-06-15T09:29:50.433Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "5",
+      "object_repr": "Книги None",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2023-06-15T09:29:50.437Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "1",
+      "object_repr": "Овощи None",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2023-06-15T09:29:50.438Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "4",
+      "object_repr": "Спорт None",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2023-06-15T09:29:50.439Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "3",
+      "object_repr": "Техника None",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2023-06-15T09:29:50.440Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "2",
+      "object_repr": "Фрукты None",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2023-06-15T09:30:00.149Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "книга ночи бестселлер None",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2023-06-15T09:30:00.152Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "5",
+      "object_repr": "красовки adidas None",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2023-06-15T09:30:00.154Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "ноутбук новый None",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2023-06-15T09:30:00.155Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "огурец парниковый None",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2023-06-15T09:30:00.155Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "томаты парниковые None",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2023-06-15T09:30:16.237Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "6",
+      "object_repr": "Продукты None",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2023-06-15T09:30:26.408Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "7",
+      "object_repr": "Техника None",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2023-06-15T09:30:41.409Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "8",
+      "object_repr": "Товары для спорта None",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "b64ilem4eqr670ec4um5s5jc5a2ctpm7",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2pChZSh16d4zEJgZbNVAUtqV8e7apAvd_vfef6kQt3UKW5MlzKzOyqjT75YiPaTsgO-x3KqmWtZlTnpX9EGbvlaW5-Vw_w6m2KZv7akn4I7JoQXMYyZJBhAz4IhCtjOWegARJorZcp8cONfhkIcE3mf1_gDwXTgo:1q9iBX:XiZTIj2Ap-x7udDVgByYui7b3Gp-opnjt0_K8am1RAg",
+      "expire_date": "2023-06-29T08:18:27.999Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 6,
+    "fields": {
+      "name": "Продукты",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 7,
+    "fields": {
+      "name": "Техника",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 8,
+    "fields": {
+      "name": "Товары для спорта",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "owner": 1,
+      "name": "медовик",
+      "description": "невероятно нежный, мягкий и пропитанный торт \"медовик\" со сметанным кремом! это самый быстрый и простой рецепт медовика - без варки мёда и без раскатки коржей! готовится этот медовик не более 30 минут, плюс время, чтобы торт пропитался.",
+      "image_preview": "media/image/big_474380.jpg",
+      "category": 6,
+      "purchase_price": 999,
+      "creation_date": null,
+      "last_modified_date": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "owner": 1,
+      "name": "творожный чизкейк \"нежный\"",
+      "description": "этот невероятно вкуснейший и роскошный десерт можно получить из обычного творога! чизкейк из творога и сгущенки получается просто волшебным, он очень вкусный и нежный. все будут в полном восторге!",
+      "image_preview": "media/image/big_248102.jpg",
+      "category": 6,
+      "purchase_price": 1563,
+      "creation_date": null,
+      "last_modified_date": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "owner": 1,
+      "name": "торт \"ленивый панчо\"",
+      "description": "это очень простой рецепт торта без выпечки! вкусный торт \"ленивый панчо\" - из готового бисквита, со сметанным кремом, орехами и консервированными ананасами.",
+      "image_preview": "media/image/big_246376.jpg",
+      "category": 6,
+      "purchase_price": 1299,
+      "creation_date": null,
+      "last_modified_date": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "owner": 1,
+      "name": "ноутбук lenovo ideapad l3 (81wq00jark)",
+      "description": "настройте производительность своей системы ищете производительный ноутбук начального уровня, который поможет вам справляться с повседневными задачами? встречайте 15,6-дюймовый ноутбук lenovo ideapad 3. оснащенный передовым процессором intel® core™ 10-го поколения и дискретной видеокартой (в максимальной комплектации), он обеспечивает высокий уровень производительности, поддерживает работу в режиме многозадачности и предоставляет широкие мультимедийные возможности. финальный штрих к образу этого",
+      "image_preview": "media/image/ideapadl381wq00jark_lenovo_63f8923032ab1.webp",
+      "category": 7,
+      "purchase_price": 70000,
+      "creation_date": null,
+      "last_modified_date": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+      "owner": 1,
+      "name": "игровой ноутбук lenovo ideapad gaming 3 15ach6 (82",
+      "description": "переходите на новый уровень откройте для себя мир игр премиум-класса с помощью современных мобильных процессоров amd ryzen™ 5000 серии h и новейших видеокарт nvidia® geforce rtx™. обеспечивая максимум преимуществ универсального мобильного компьютера, ноутбук ideapad gaming 3 также позволяет играть на профессиональном уровне. вы получите игровое преимущество за счет сверхбыстрого fhd-дисплея с матрицей ips, ультраскоростной клавиатуры с технологией full n-key rollover, эффективной системы охлажде",
+      "image_preview": "media/image/ideapadgaming315ach682k200qypb_lenovo_641ab238204e7.jpeg",
+      "category": 7,
+      "purchase_price": 100000,
+      "creation_date": null,
+      "last_modified_date": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 11,
+    "fields": {
+      "owner": 1,
+      "name": "ноутбук hp 255 g8 (3v5h3ea)",
+      "description": "экономичность. полная готовность к работе. будьте всегда на связи — этот полнофункциональный ноутбук hp 255 в модернизированном облегченном корпусе удобно брать с собой куда угодно. благодаря высокопроизводительному процессору amd и полному набору инструментов для совместной работы вы сможете эффективнее решать любые задачи.  элегантный и легкий вам нравится современный мобильный стиль работы? ноутбук hp 255 в тонком и легком корпусе — ваш идеальный выбор. на великолепном экране с узкими рамками",
+      "image_preview": "media/image/255g83v5h3ea_hp_61a8753233488.webp",
+      "category": 7,
+      "purchase_price": 89000,
+      "creation_date": null,
+      "last_modified_date": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+      "owner": 1,
+      "name": "перчатки боксерские для спарринга livepro lp8600-1",
+      "description": "боксерские перчатки для спарринга livepro lp8600-14 созданы специально для комфортных тренировок. прочные и качественные материалы, стильный дизайн и естественная биомеханика перчаток — все это превратит вашу тренировку в уникальный спортивный опыт.",
+      "image_preview": "media/image/livepro-lp8600-14-02.jpg",
+      "category": 8,
+      "purchase_price": 3000,
+      "creation_date": null,
+      "last_modified_date": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 13,
+    "fields": {
+      "owner": 1,
+      "name": "лапы боксерские для тренировки точности livepro lp",
+      "description": "боксерские лапы livepro lp8604 — отличный инструмент для тренировки скорости, баланса и точности. благодаря изогнутым подушечкам они отлично подходят для хука и джеба с большой целевой площадью. они используются в боксе, кикбоксинге, к1 и тайском боксе. износостойкая синтетическая кожа и предварительно изогнутая форма обеспечивают безопасность и комфорт при ношении.",
+      "image_preview": "media/image/lp8604-11-min.jpg",
+      "category": 8,
+      "purchase_price": 3200,
+      "creation_date": null,
+      "last_modified_date": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 14,
+    "fields": {
+      "owner": 1,
+      "name": "мешок боксерский водоналивной super pro water-air",
+      "description": "боксерский мешок water-air выглядит как обычная боксерская груша, но если присмотреться, он сильно отличается. может быть, не снаружи, но наверняка изнутри и даже больше в тот момент, когда вы ударяете по нему. этот уникальный боксерский мешок наполнен водой и воздухом. эта новая боксерская груша изготовлена из прочной полиуретановой бизонил-синтетической кожи и идеально подходит для тренировки ударов руками, ногами, комбинациями ударов и т. д. - подходит для всех боевых искусств.",
+      "image_preview": "media/image/super-pro-water-air-min-5.jpg",
+      "category": 8,
+      "purchase_price": 6000,
+      "creation_date": null,
+      "last_modified_date": null
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$pti1sihsnCqXvbRj0aydnj$Fe1/h4jNUXp9D/esHx6qu4BgNZvsLTjO3SLhQpl8Yak=",
+      "last_login": "2023-06-15T08:18:27.999Z",
+      "is_superuser": true,
+      "first_name": "Admin",
+      "last_name": "Admin",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-06-15T08:18:05.498Z",
+      "email": "admin@mail.ru",
+      "phone": null,
+      "avatar": "",
+      "country": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]

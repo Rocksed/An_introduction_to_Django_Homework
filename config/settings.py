@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
+from decouple import config
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -145,3 +147,24 @@ EMAIL_HOST_PASSWORD = 'jvxzhnrfqdrrrwqo'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 LOGIN_URL = '/users/'
+
+CACHE_MIDDLEWARE_ALIAS = 'default'
+CACHE_MIDDLEWARE_SECONDS = 60 * 5  # Примерно 5 минут
+CACHE_MIDDLEWARE_KEY_PREFIX = ''
+
+CACHE_ENABLE = config('CACHE_ENABLE', default=False, cast=bool)
+REDIS_HOST = config('REDIS_HOST', default='127.0.0.1')
+REDIS_PORT = config('REDIS_PORT', default='6379')
+
+if CACHE_ENABLE:
+    CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.redis.RedisCache",
+            'LOCATION': f'redis://{REDIS_HOST}:{REDIS_PORT}',
+        }}
+else:
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+        }
+    }

@@ -13,7 +13,7 @@ class ProductVersion(forms.ModelForm):
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['name', 'description', 'purchase_price', 'image_preview']
+        fields = ['name', 'category', 'description', 'purchase_price', 'image_preview']
 
     def clean_name(self):
         forbidden_words = ['казино', 'криптовалюта', 'крипта', 'биржа', 'дешево', 'бесплатно', 'обман', 'полиция',

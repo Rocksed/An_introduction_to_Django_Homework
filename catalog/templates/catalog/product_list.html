@@ -1,34 +1,45 @@
 {% extends 'catalog/base.html' %}
+
 {% block content %}
-<!--=====================
-          Content
-======================-->
 <section class="content">
-    <div class="ic">More Website Templates @ TemplateMonster.com - July 30, 2014!</div>
     <div class="container">
         <div class="row">
             <div class="grid_12">
-                <h2>Продукты</h2>
+                <h2>Категории</h2>
             </div>
-
+            <div class="col-md-12">
+                <form id="category-filter-form" method="get">
+                    <select name="category">
+                        <option value="">Все категории</option>
+                        {% for category in categories %}
+                        <option value="{{ category.pk }}">{{ category.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="submit">Фильтр</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
             {% for object in object_list %}
             <div class="col-md-3">
                 <div class="single-products">
                     <div class="product-image">
-                        <a href="{{ object.get_absolute_url }}"><img src="{{ object.image_preview.url }}"
-                                                                     alt="{{ object.name }}" width="370"
-                                                                     height="270"></a>
-                        <div class="block2">
-                            <time datetime="2014-01-01">{{object.purchase_price}}<br>Руб.</time>
+                        <a href="{{ object.get_absolute_url }}">
+                            <img src="{{ object.image_preview.url }}" alt="{{ object.name }}" width="370" height="270">
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <div class="block2 mb-2">
+                            <time datetime="2014-01-01">{{ object.purchase_price }}<br>Руб.</time>
                             <div class="extra_wrapper">
-                                <div class="text1"><a href="#">{{ object.name }}</a></div>
-                                {{object.description}}
+                                <div class="text1"><a href="{{ object.get_absolute_url }}">{{ object.name }}</a></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="buy-button">
-                        <a href="#" class="black-border-button">Купить</a>
-                        <a href="{% url 'catalog:product_formset' object.pk %}" class="black-border-button">Изменить</a>
+                        <div class="buy-button">
+                            <a href="#" class="black-border-button">Купить</a>
+                            <a href="{% url 'catalog:product_formset' object.pk %}"
+                               class="black-border-button">Изменить</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -36,5 +47,18 @@
         </div>
     </div>
 </section>
+
+<style>
+    .product-image {
+        margin-bottom: 2rem; /* Измените значение здесь по вашему усмотрению */
+    }
+
+</style>
+
 {% endblock %}
+
+
+
+
+
 

@@ -7,41 +7,95 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         product_list = [
             {
-                "name": "Огурец",
-                "description": "Парниковый",
-                "image_preview": "media/image/white.jpg",
-                "category": "Овощи",
-                "purchase_price": 199,
-                "creation_date": "2023-05-13T13:06:12Z",
-                "last_modified_date": "2023-05-13T13:06:13Z"
+                "owner": 1,
+                "name": "медовик",
+                "description": "невероятно нежный, мягкий и пропитанный торт \"медовик\" со сметанным кремом! это самый быстрый и простой рецепт медовика - без варки мёда и без раскатки коржей! готовится этот медовик не более 30 минут, плюс время, чтобы торт пропитался.",
+                "image_preview": "media/image/big_474380.jpg",
+                "category": 6,
+                "purchase_price": 999,
+                "creation_date": null,
+                "last_modified_date": null
             },
             {
-                "name": "Томаты",
-                "description": "Парниковые",
-                "image_preview": "media/image/tomatoes.jpg",
-                "category": "Овощи",
-                "purchase_price": 299,
-                "creation_date": "2023-05-13T13:08:17Z",
-                "last_modified_date": "2023-05-13T13:08:18Z"
+                "owner": 1,
+                "name": "творожный чизкейк \"нежный\"",
+                "description": "этот невероятно вкуснейший и роскошный десерт можно получить из обычного творога! чизкейк из творога и сгущенки получается просто волшебным, он очень вкусный и нежный. все будут в полном восторге!",
+                "image_preview": "media/image/big_248102.jpg",
+                "category": 6,
+                "purchase_price": 1563,
+                "creation_date": null,
+                "last_modified_date": null
             },
             {
-                "name": "Яблок",
-                "description": "Польский",
-                "image_preview": "media/image/depositphotos_107748126-stock-photo-fresh-red-apple-with-leaf.jpg",
-                "category": "Фрукт",
-                "purchase_price": 99,
-                "creation_date": "2023-05-13T13:09:42Z",
-                "last_modified_date": "2023-05-13T13:09:43Z"
+                "owner": 1,
+                "name": "торт \"ленивый панчо\"",
+                "description": "это очень простой рецепт торта без выпечки! вкусный торт \"ленивый панчо\" - из готового бисквита, со сметанным кремом, орехами и консервированными ананасами.",
+                "image_preview": "media/image/big_246376.jpg",
+                "category": 6,
+                "purchase_price": 1299,
+                "creation_date": null,
+                "last_modified_date": null
             },
             {
-                "name": "Торт",
-                "description": "Свежий",
-                "image_preview": "media/image/depositphotos_11726181-stock-photo-weddind-cake-with-flowers-over.jpg",
-                "category": "Кондитерские изделия",
-                "purchase_price": 599,
-                "creation_date": "2023-05-13T13:10:25Z",
-                "last_modified_date": "2023-05-13T13:10:26Z"
-            }
+                "owner": 1,
+                "name": "ноутбук lenovo ideapad l3 (81wq00jark)",
+                "description": "настройте производительность своей системы ищете производительный ноутбук начального уровня, который поможет вам справляться с повседневными задачами? встречайте 15,6-дюймовый ноутбук lenovo ideapad 3. оснащенный передовым процессором intel® core™ 10-го поколения и дискретной видеокартой (в максимальной комплектации), он обеспечивает высокий уровень производительности, поддерживает работу в режиме многозадачности и предоставляет широкие мультимедийные возможности. финальный штрих к образу этого",
+                "image_preview": "media/image/ideapadl381wq00jark_lenovo_63f8923032ab1.webp",
+                "category": 7,
+                "purchase_price": 70000,
+                "creation_date": null,
+                "last_modified_date": null
+            },
+            {
+                "owner": 1,
+                "name": "игровой ноутбук lenovo ideapad gaming 3 15ach6 (82",
+                "description": "переходите на новый уровень откройте для себя мир игр премиум-класса с помощью современных мобильных процессоров amd ryzen™ 5000 серии h и новейших видеокарт nvidia® geforce rtx™. обеспечивая максимум преимуществ универсального мобильного компьютера, ноутбук ideapad gaming 3 также позволяет играть на профессиональном уровне. вы получите игровое преимущество за счет сверхбыстрого fhd-дисплея с матрицей ips, ультраскоростной клавиатуры с технологией full n-key rollover, эффективной системы охлажде",
+                "image_preview": "media/image/ideapadgaming315ach682k200qypb_lenovo_641ab238204e7.jpeg",
+                "category": 7,
+                "purchase_price": 100000,
+                "creation_date": null,
+                "last_modified_date": null
+            },
+            {
+                "owner": 1,
+                "name": "ноутбук hp 255 g8 (3v5h3ea)",
+                "description": "экономичность. полная готовность к работе. будьте всегда на связи — этот полнофункциональный ноутбук hp 255 в модернизированном облегченном корпусе удобно брать с собой куда угодно. благодаря высокопроизводительному процессору amd и полному набору инструментов для совместной работы вы сможете эффективнее решать любые задачи.  элегантный и легкий вам нравится современный мобильный стиль работы? ноутбук hp 255 в тонком и легком корпусе — ваш идеальный выбор. на великолепном экране с узкими рамками",
+                "image_preview": "media/image/255g83v5h3ea_hp_61a8753233488.webp",
+                "category": 7,
+                "purchase_price": 89000,
+                "creation_date": null,
+                "last_modified_date": null
+            },
+            {
+                "owner": 1,
+                "name": "перчатки боксерские для спарринга livepro lp8600-1",
+                "description": "боксерские перчатки для спарринга livepro lp8600-14 созданы специально для комфортных тренировок. прочные и качественные материалы, стильный дизайн и естественная биомеханика перчаток — все это превратит вашу тренировку в уникальный спортивный опыт.",
+                "image_preview": "media/image/livepro-lp8600-14-02.jpg",
+                "category": 8,
+                "purchase_price": 3000,
+                "creation_date": null,
+                "last_modified_date": null
+            },
+            {
+                "owner": 1,
+                "name": "лапы боксерские для тренировки точности livepro lp",
+                "description": "боксерские лапы livepro lp8604 — отличный инструмент для тренировки скорости, баланса и точности. благодаря изогнутым подушечкам они отлично подходят для хука и джеба с большой целевой площадью. они используются в боксе, кикбоксинге, к1 и тайском боксе. износостойкая синтетическая кожа и предварительно изогнутая форма обеспечивают безопасность и комфорт при ношении.",
+                "image_preview": "media/image/lp8604-11-min.jpg",
+                "category": 8,
+                "purchase_price": 3200,
+                "creation_date": null,
+                "last_modified_date": null
+            },
+            {
+                "owner": 1,
+                "name": "мешок боксерский водоналивной super pro water-air",
+                "description": "боксерский мешок water-air выглядит как обычная боксерская груша, но если присмотреться, он сильно отличается. может быть, не снаружи, но наверняка изнутри и даже больше в тот момент, когда вы ударяете по нему. этот уникальный боксерский мешок наполнен водой и воздухом. эта новая боксерская груша изготовлена из прочной полиуретановой бизонил-синтетической кожи и идеально подходит для тренировки ударов руками, ногами, комбинациями ударов и т. д. - подходит для всех боевых искусств.",
+                "image_preview": "media/image/super-pro-water-air-min-5.jpg",
+                "category": 8,
+                "purchase_price": 6000,
+                "creation_date": null,
+                "last_modified_date": null
+            },
         ]
         product_object = []
         for product_item in product_list:

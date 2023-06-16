@@ -4,12 +4,19 @@
     <div class="ic">More Website Templates @ TemplateMonster.com - July 30, 2014!</div>
     <div class="container">
         <div class="row">
-            <div class="grid_11">
-                <h2>Версия</h2>
-                <div class="version-form">
-                    {{ version_form.as_p }}
+            <div class="grid_7">
+                <div class="product">
+                    <div class="product_title"><a href="{% url 'catalog:product_detail' object.pk %}">{{ object.name }}</a>
+                    </div>
+                    {% if object.image_preview %}
+                    <a href="{{ object.get_absolute_url }}"><img src="{{ object.image_preview.url }}"
+                                                                 alt="{{ object.name }}" width="800"
+                                                                 height="400"></a>
+                    {% endif %}
+                    <p>{{ object.description }}</p>
                 </div>
             </div>
         </div>
+    </div>
 </section>
 {% endblock %}
