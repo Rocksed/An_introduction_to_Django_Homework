@@ -12,19 +12,10 @@ from catalog.models import Product, Blog, Version, Category
 from django.core.cache import cache
 
 
-def get_category_list():
-    category_list = cache.get('category_list')
-    if category_list is None:
-        category_list = Category.objects.all()
-        cache.set('category_list', category_list)
-    return category_list
-
-
 class ProductListView(generic.ListView):
     model = Product
     template_name = 'catalog/product_list.html'
     context_object_name = 'object_list'
-    category_list = get_category_list()
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -39,6 +30,15 @@ class ProductListView(generic.ListView):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
         return context
+
+    def get_categories(self):
+        categories = cache.get('categories')
+        if categories is None:
+            # Если данные отсутствуют в кеше, получаем их из базы данных
+            categories = Category.objects.all()
+            # Сохраняем данные в кеше на определенное время
+            cache.set('categories', categories, timeout=3600)
+        return categories
 
 
 class ProductDetailView(generic.DetailView):
